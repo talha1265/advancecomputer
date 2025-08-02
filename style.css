@@ -527,4 +527,22 @@ form button {
 }
 form button:hover {
   background-color: #a20f1a;
+
+}
+
+.canvas-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#certificateCanvas {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
