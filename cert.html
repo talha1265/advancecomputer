@@ -37,89 +37,102 @@
         </nav>
 
         <!-- Certificate Generator Section -->
-<section class="certificate-section">
-  <h2>Generate Your Certificate</h2>
-  <div class="certificate-container">
-    <form id="certificateForm">
-      <label for="studentName">Student Name:</label>
-      <input type="text" id="studentName" name="studentName" required>
+        <section class="certificate-section">
+            <h2>Generate Your Certificate</h2>
+            <div class="certificate-container">
+                <form id="certificateForm">
+                    <label for="studentName">Student Name:</label>
+                    <input type="text" id="studentName" name="studentName" required>
 
-      <label for="fatherName">Father's Name:</label>
-      <input type="text" id="fatherName" name="fatherName" required>
+                    <label for="fatherName">Father's Name:</label>
+                    <input type="text" id="fatherName" name="fatherName" required>
 
-      <label for="course">Course:</label>
-      <input type="text" id="course" name="course" required>
+                    <label for="course">Course:</label>
+                    <input type="text" id="course" name="course" required>
+                    <label for="passcode">Enter Passcode:</label>
+                    <input type="password" id="passcode" name="passcode" required>
 
-      <button type="submit">Generate Certificate</button>
-    </form>
-    <canvas id="certificateCanvas" width="800" height="600" style="display: none;"></canvas>
-    <a id="downloadLink" download="Certificate.png" style="display: none;">Download Certificate</a>
-  </div>
-</section>
 
- <!-- Banner -->
-    <section class="banner">
-      <h2>Register Now and Start Learning From Industry Experts!</h2>
-    </section>
+                    <button type="submit">Generate Certificate</button>
+                </form>
+                <canvas id="certificateCanvas" width="800" height="600" style="display: none;"></canvas>
+                <a id="downloadLink" download="Certificate.png" style="display: none;">Download Certificate</a>
+            </div>
+        </section>
 
-    <!-- Footer -->
-    <footer>
-      <div class="footer-links">
-        <a href="#">Home</a>
-        <a href="#about">About</a>
-        <a href="#courses">Courses</a>
-        <a href="#contact">Contact</a>
-        <a href="#">Career</a>
-      </div>
-      <p>&copy; 2025 Advance Computer Education Center. All rights reserved.</p>
-    </footer>
-  </div>
-  <script>
-  function toggleMenu() {
-    const nav = document.querySelector('.nav-links');
-    nav.classList.toggle('nav-active');
-  }
+        <!-- Banner -->
+        <section class="banner">
+            <h2>Register Now and Start Learning From Industry Experts!</h2>
+        </section>
 
-  document.getElementById('certificateForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('studentName').value;
-      const father = document.getElementById('fatherName').value;
-      const course = document.getElementById('course').value;
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#contact">Contact</a>
+                <a href="#">Career</a>
+            </div>
+            <p>&copy; 2025 Advance Computer Education Center. All rights reserved.</p>
+        </footer>
+    </div>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('nav-active');
+        }
+document.getElementById('certificateForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-      const canvas = document.getElementById('certificateCanvas');
-      const ctx = canvas.getContext('2d');
+    const enteredPasscode = document.getElementById('passcode').value;
+    const correctPasscode = "Advance556@"; // Replace this with your actual passcode
 
-      ctx.fillStyle = '#fff';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.strokeStyle = '#000';
-      ctx.strokeRect(0, 0, canvas.width, canvas.height);
+    if (enteredPasscode !== correctPasscode) {
+      alert("Incorrect passcode. Please try again.");
+      return; // stop form submission
+    }
 
-      ctx.font = '28px Poppins';
-      ctx.fillStyle = 'rgb(193, 18, 31)';
-      ctx.textAlign = 'center';
-      ctx.fillText('Advance Computer Education Center', canvas.width / 2, 80);
+    const name = document.getElementById('studentName').value;
+    const father = document.getElementById('fatherName').value;
+    const course = document.getElementById('course').value;
 
-      ctx.font = '24px Poppins';
-      ctx.fillStyle = '#000';
-      ctx.fillText('Certificate of Completion', canvas.width / 2, 140);
+    const canvas = document.getElementById('certificateCanvas');
+    const ctx = canvas.getContext('2d');
 
-      ctx.font = '18px Poppins';
-      ctx.fillText(`This is to certify that`, canvas.width / 2, 200);
-      ctx.fillText(`${name}`, canvas.width / 2, 240);
-      ctx.fillText(`S/O ${father}`, canvas.width / 2, 280);
-      ctx.fillText(`has successfully completed the ${course} course.`, canvas.width / 2, 320);
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.strokeStyle = '#000';
+    ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-      ctx.font = '14px Poppins';
-      ctx.fillText('Date: ' + new Date().toLocaleDateString(), 150, 380);
-      ctx.fillText('Authorized Signatory', canvas.width - 150, 380);
+    ctx.font = '28px Poppins';
+    ctx.fillStyle = 'rgb(193, 18, 31)';
+    ctx.textAlign = 'center';
+    ctx.fillText('Advance Computer Education Center', canvas.width / 2, 80);
 
-      canvas.style.display = 'block';
-      const downloadLink = document.getElementById('downloadLink');
-      downloadLink.href = canvas.toDataURL();
-      downloadLink.style.display = 'inline-block';
-      downloadLink.innerText = 'Download Certificate';
-    });
-</script>
+    ctx.font = '24px Poppins';
+    ctx.fillStyle = '#000';
+    ctx.fillText('Certificate of Completion', canvas.width / 2, 140);
+
+    ctx.font = '18px Poppins';
+    ctx.fillText(`This is to certify that`, canvas.width / 2, 200);
+    ctx.fillText(`${name}`, canvas.width / 2, 240);
+    ctx.fillText(`S/O ${father}`, canvas.width / 2, 280);
+    ctx.fillText(`has successfully completed the ${course} course.`, canvas.width / 2, 320);
+
+    ctx.font = '14px Poppins';
+    ctx.fillText('Date: ' + new Date().toLocaleDateString(), 150, 380);
+    ctx.fillText('Authorized Signatory', canvas.width - 150, 380);
+
+    canvas.style.display = 'block';
+    const downloadLink = document.getElementById('downloadLink');
+    downloadLink.href = canvas.toDataURL();
+    downloadLink.style.display = 'inline-block';
+    downloadLink.innerText = 'Download Certificate';
+});
+
+    </script>
 
 </body>
+
 </html>
