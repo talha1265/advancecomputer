@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advance Computer Education Center</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">
+                <img src="logo.png" alt="Advance Computer Education Center" class="logo-img" />
+            </div>
+
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li class="dropdown">
+                    <a href="#">Courses</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Web Dev</a></li>
+                        <li><a href="#">Digital Marketing</a></li>
+                        <li><a href="#">Stock Market</a></li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Certificates</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+
+            </ul>
+        </nav>
+
+        <!-- Certificate Generator Section -->
+<section class="certificate-section">
+  <h2>Generate Your Certificate</h2>
+  <div class="certificate-container">
+    <form id="certificateForm">
+      <label for="studentName">Student Name:</label>
+      <input type="text" id="studentName" name="studentName" required>
+
+      <label for="fatherName">Father's Name:</label>
+      <input type="text" id="fatherName" name="fatherName" required>
+
+      <label for="course">Course:</label>
+      <input type="text" id="course" name="course" required>
+
+      <button type="submit">Generate Certificate</button>
+    </form>
+    <canvas id="certificateCanvas" width="800" height="600" style="display: none;"></canvas>
+    <a id="downloadLink" download="Certificate.png" style="display: none;">Download Certificate</a>
+  </div>
+</section>
+
+ <!-- Banner -->
+    <section class="banner">
+      <h2>Register Now and Start Learning From Industry Experts!</h2>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Career</a>
+      </div>
+      <p>&copy; 2025 Advance Computer Education Center. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+  function toggleMenu() {
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('nav-active');
+  }
+
+  document.getElementById('certificateForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('studentName').value;
+      const father = document.getElementById('fatherName').value;
+      const course = document.getElementById('course').value;
+
+      const canvas = document.getElementById('certificateCanvas');
+      const ctx = canvas.getContext('2d');
+
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.strokeStyle = '#000';
+      ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+      ctx.font = '28px Poppins';
+      ctx.fillStyle = 'rgb(193, 18, 31)';
+      ctx.textAlign = 'center';
+      ctx.fillText('Advance Computer Education Center', canvas.width / 2, 80);
+
+      ctx.font = '24px Poppins';
+      ctx.fillStyle = '#000';
+      ctx.fillText('Certificate of Completion', canvas.width / 2, 140);
+
+      ctx.font = '18px Poppins';
+      ctx.fillText(`This is to certify that`, canvas.width / 2, 200);
+      ctx.fillText(`${name}`, canvas.width / 2, 240);
+      ctx.fillText(`S/O ${father}`, canvas.width / 2, 280);
+      ctx.fillText(`has successfully completed the ${course} course.`, canvas.width / 2, 320);
+
+      ctx.font = '14px Poppins';
+      ctx.fillText('Date: ' + new Date().toLocaleDateString(), 150, 380);
+      ctx.fillText('Authorized Signatory', canvas.width - 150, 380);
+
+      canvas.style.display = 'block';
+      const downloadLink = document.getElementById('downloadLink');
+      downloadLink.href = canvas.toDataURL();
+      downloadLink.style.display = 'inline-block';
+      downloadLink.innerText = 'Download Certificate';
+    });
+</script>
+
+</body>
+</html>

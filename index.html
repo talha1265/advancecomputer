@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Advance Computer Education Center</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+  <img src="logo.png" alt="Advance Computer Education Center" class="logo-img" />
+</div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Web Dev</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Stock Market</a></li>
+          </ul>
+        </li>
+        <li><a href="./cert.html">Certificates</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        
+      </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+      <div class="hero-content">
+        <div class="text">
+          <h1>Shape Your Future with Advance Computer Education Center</h1>
+          <p>Government Certified Courses to Upgrade Your Skills and Build Your Career</p>
+          <div class="hero-buttons">
+            <a href="#contact" class="btn">Enquire Now</a>
+            <a href="#courses" class="btn secondary">View Courses</a>
+          </div>
+        </div>
+        <div class="image">
+          <img src="hero.png" alt="Education Banner" />
+        </div>
+      </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="banner">
+      <h2>1000+ Students Trained | 95% Placement Rate | Top-Rated Faculty</h2>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="about-img.jpg" alt="About Us" />
+      </div>
+      <div class="about-text">
+        <h2>About Us</h2>
+        <p>Advance Computer Education Center is a skill development center focused on practical knowledge, government-certified training, and real career growth. Learn directly from industry professionals and turn your passion into a career.</p>
+        <a href="#contact" class="btn">Know More</a>
+      </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="reviews" id="reviews">
+      <h2>Student Reviews</h2>
+      <div class="review-cards scroll-x">
+        <div class="card">
+          <img src="student1.jpg" alt="Student 1" />
+          <h3>Priya Singh</h3>
+          <p>DU Student</p>
+          <p>"Best institute for digital skills. The faculty is very helpful and practical-based training is amazing!"</p>
+        </div>
+        <div class="card">
+          <img src="student2.jpg" alt="Student 2" />
+          <h3>Sneha Kapoor</h3>
+          <p>DU Student</p>
+          <p>"It helped me start my freelancing journey. Highly recommended for real career growth."</p>
+        </div>
+        <div class="card">
+          <img src="student3.jpg" alt="Student 3" />
+          <h3>Amit Chauhan</h3>
+          <p>Jamia Millia</p>
+          <p>"Loved the friendly environment and the live projects we worked on!"</p>
+        </div>
+        <div class="card">
+          <img src="student1.jpg" alt="Student 1" />
+          <h3>Priya Singh</h3>
+          <p>DU Student</p>
+          <p>"Best institute for digital skills. The faculty is very helpful and practical-based training is amazing!"</p>
+        </div>
+        <div class="card">
+          <img src="student2.jpg" alt="Student 2" />
+          <h3>Sneha Kapoor</h3>
+          <p>DU Student</p>
+          <p>"It helped me start my freelancing journey. Highly recommended for real career growth."</p>
+        </div>
+        <div class="card">
+          <img src="student3.jpg" alt="Student 3" />
+          <h3>Amit Chauhan</h3>
+          <p>Jamia Millia</p>
+          <p>"Loved the friendly environment and the live projects we worked on!"</p>
+        </div>
+      </div>
+    </section>
+    
+
+    <!-- YouTube Section -->
+    <section class="youtube">
+      <h2>Watch Our Introduction</h2>
+      <iframe width="100%" height="315" src="https://www.youtube.com/embed/y0a4mqB1j7w" frameborder="0" allowfullscreen></iframe>
+    </section>
+
+    <!-- Banner -->
+    <section class="banner">
+      <h2>Register Now and Start Learning From Industry Experts!</h2>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Career</a>
+      </div>
+      <p>&copy; 2025 Advance Computer Education Center. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+  function toggleMenu() {
+    const nav = document.querySelector('.nav-links');
+    nav.classList.toggle('nav-active');
+  }
+
+  // document.getElementById('certificateForm').addEventListener('submit', function(e) {
+  //     e.preventDefault();
+  //     const name = document.getElementById('studentName').value;
+  //     const father = document.getElementById('fatherName').value;
+  //     const course = document.getElementById('course').value;
+
+  //     const canvas = document.getElementById('certificateCanvas');
+  //     const ctx = canvas.getContext('2d');
+
+  //     ctx.fillStyle = '#fff';
+  //     ctx.fillRect(0, 0, canvas.width, canvas.height);
+  //     ctx.strokeStyle = '#000';
+  //     ctx.strokeRect(0, 0, canvas.width, canvas.height);
+
+  //     ctx.font = '28px Poppins';
+  //     ctx.fillStyle = 'rgb(193, 18, 31)';
+  //     ctx.textAlign = 'center';
+  //     ctx.fillText('Advance Computer Education Center', canvas.width / 2, 80);
+
+  //     ctx.font = '24px Poppins';
+  //     ctx.fillStyle = '#000';
+  //     ctx.fillText('Certificate of Completion', canvas.width / 2, 140);
+
+  //     ctx.font = '18px Poppins';
+  //     ctx.fillText(`This is to certify that`, canvas.width / 2, 200);
+  //     ctx.fillText(`${name}`, canvas.width / 2, 240);
+  //     ctx.fillText(`S/O ${father}`, canvas.width / 2, 280);
+  //     ctx.fillText(`has successfully completed the ${course} course.`, canvas.width / 2, 320);
+
+  //     ctx.font = '14px Poppins';
+  //     ctx.fillText('Date: ' + new Date().toLocaleDateString(), 150, 380);
+  //     ctx.fillText('Authorized Signatory', canvas.width - 150, 380);
+
+  //     canvas.style.display = 'block';
+  //     const downloadLink = document.getElementById('downloadLink');
+  //     downloadLink.href = canvas.toDataURL();
+  //     downloadLink.style.display = 'inline-block';
+  //     downloadLink.innerText = 'Download Certificate';
+  //   });
+</script>
+
+</body>
+</html>
