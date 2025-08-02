@@ -82,57 +82,79 @@
             const nav = document.querySelector('.nav-links');
             nav.classList.toggle('nav-active');
         }
-document.getElementById('certificateForm').addEventListener('submit', function(e) {
-    e.preventDefault();
 
-    const enteredPasscode = document.getElementById('passcode').value;
-    const correctPasscode = "Advance556@"; // Replace this with your actual passcode
+        document.getElementById('certificateForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-    if (enteredPasscode !== correctPasscode) {
-      alert("Incorrect passcode. Please try again.");
-      return; // stop form submission
-    }
+            const name = document.getElementById('studentName').value;
+            const father = document.getElementById('fatherName').value;
+            const course = document.getElementById('course').value;
 
-    const name = document.getElementById('studentName').value;
-    const father = document.getElementById('fatherName').value;
-    const course = document.getElementById('course').value;
+            const canvas = document.getElementById('certificateCanvas');
+            const ctx = canvas.getContext('2d');
 
-    const canvas = document.getElementById('certificateCanvas');
-    const ctx = canvas.getContext('2d');
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#fff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = '#000';
+            ctx.strokeRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = '#fff';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeStyle = '#000';
-    ctx.strokeRect(0, 0, canvas.width, canvas.height);
+            // Load all images
+            const logo = new Image();
+            const signature = new Image();
+            const mesc = new Image();
 
-    ctx.font = '28px Poppins';
-    ctx.fillStyle = 'rgb(193, 18, 31)';
-    ctx.textAlign = 'center';
-    ctx.fillText('Advance Computer Education Center', canvas.width / 2, 80);
+            logo.src = 'logo.png';
+            signature.src = 'signature.png';
+            mesc.src = 'msme.png';
 
-    ctx.font = '24px Poppins';
-    ctx.fillStyle = '#000';
-    ctx.fillText('Certificate of Completion', canvas.width / 2, 140);
+            // Wait for all images to load
+            Promise.all([
+                new Promise(res => logo.onload = res),
+                new Promise(res => signature.onload = res),
+                new Promise(res => mesc.onload = res)
+            ]).then(() => {
+                // Draw institute logo
+                ctx.drawImage(logo, 40, 30, 80, 80); // Left-top corner
 
-    ctx.font = '18px Poppins';
-    ctx.fillText(`This is to certify that`, canvas.width / 2, 200);
-    ctx.fillText(`${name}`, canvas.width / 2, 240);
-    ctx.fillText(`S/O ${father}`, canvas.width / 2, 280);
-    ctx.fillText(`has successfully completed the ${course} course.`, canvas.width / 2, 320);
+                // Institute Name
+                ctx.font = '28px Poppins';
+                ctx.fillStyle = 'rgb(193, 18, 31)';
+                ctx.textAlign = 'center';
+                ctx.fillText('Advance Computer Education Center', canvas.width / 2, 80);
 
-    ctx.font = '14px Poppins';
-    ctx.fillText('Date: ' + new Date().toLocaleDateString(), 150, 380);
-    ctx.fillText('Authorized Signatory', canvas.width - 150, 380);
+                ctx.font = '24px Poppins';
+                ctx.fillStyle = '#000';
+                ctx.fillText('Certificate of Completion', canvas.width / 2, 140);
 
-    canvas.style.display = 'block';
-    const downloadLink = document.getElementById('downloadLink');
-    downloadLink.href = canvas.toDataURL();
-    downloadLink.style.display = 'inline-block';
-    downloadLink.innerText = 'Download Certificate';
-});
+                ctx.font = '18px Poppins';
+                ctx.fillText(`This is to certify that`, canvas.width / 2, 200);
+                ctx.fillText(`${name}`, canvas.width / 2, 240);
+                ctx.fillText(`S/O ${father}`, canvas.width / 2, 280);
+                ctx.fillText(`has successfully completed the ${course} course.`, canvas.width / 2, 320);
+
+                ctx.font = '14px Poppins';
+                ctx.fillText('Issued Date: ' + new Date().toLocaleDateString(), 150, 380);
+                ctx.fillText('Authorized Signatory', canvas.width - 150, 460);
+
+                // Draw signature
+                ctx.drawImage(signature, canvas.width - 250, 400, 120, 60);
+
+                // Draw MESC logo at bottom-left
+                ctx.drawImage(mesc, 40, canvas.height - 100, 100, 60);
+
+                // Show canvas and download button
+                canvas.style.display = 'block';
+                const downloadLink = document.getElementById('downloadLink');
+                downloadLink.href = canvas.toDataURL();
+                downloadLink.style.display = 'inline-block';
+                downloadLink.innerText = 'Download Certificate';
+            });
+        });
 
     </script>
 
 </body>
 
 </html>
+
