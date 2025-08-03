@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advance Computer Education Center</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Advance Computer Education Center" class="logo-img" />
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="#">Web Dev</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Stock Market</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Certificates</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="inh">
+      <p>Admissions Are Open And Seats Are Limited. Hurry Up!🚀</p>
+      <a href="#contact" class="btnd enroll-btnd">Enroll Now</a>
+    </section>
+
+  <!-- Contact Form Section -->
+<section class="certificate-section" id="contact">
+  <h2>Contact Us for Course Registration</h2>
+  <div class="certificate-container">
+    <form id="whatsappForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" required />
+
+      <label for="whatsapp">WhatsApp Number:</label>
+      <input type="tel" id="whatsapp" required placeholder="Include country code e.g., +91" />
+
+      <label for="school">School/College:</label>
+      <input type="text" id="school" required />
+
+      <label for="course">Select Course:</label>
+      <select id="course" required>
+        <option value="" disabled selected>Select a course</option>
+        <option value="Web Development">Web Development</option>
+        <option value="Digital Marketing">Digital Marketing</option>
+        <option value="Stock Market">Stock Market</option>
+        <option value="Graphic Design">Graphic Design</option>
+        <option value="Tally">Tally</option>
+        <option value="Advance Excel">Advance Excel</option>
+      </select>
+
+      <button type="submit">Send to WhatsApp</button>
+    </form>
+  </div>
+</section>
+
+    <!-- Banner -->
+    <section class="banner">
+      <h2>Register Now and Start Learning From Industry Experts!</h2>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Career</a>
+      </div>
+      <p>&copy; 2025 Advance Computer Education Center. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("whatsappForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      const whatsapp = document.getElementById("whatsapp").value;
+      const school = document.getElementById("school").value;
+      const course = document.getElementById("course").value;
+
+      const message = `Hello, I am interested in joining a course.\n\nName: ${name}\nWhatsApp: ${whatsapp}\nSchool/College: ${school}\nCourse: ${course}`;
+
+      const phoneNumber = "916386336988"; // Replace with your WhatsApp business number
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, "_blank");
+    });
+  </script>
+</body>
+
+</html>
