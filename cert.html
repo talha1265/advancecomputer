@@ -122,13 +122,19 @@
 
   const canvas = document.getElementById('certificateCanvas');
   const ctx = canvas.getContext('2d');
-// // Scale canvas for high-DPI screens
-// const scale = window.devicePixelRatio;
-// canvas.width = 800 * scale;
-// canvas.height = 600 * scale;
-// canvas.style.width = '800px';
-// canvas.style.height = '600px';
-// ctx.scale(scale, scale);
+          // High-res settings (2x resolution)
+const scale = 2;
+const displayWidth = 900;  // Width to appear on screen (unchanged)
+const displayHeight = 600; // Height to appear on screen (unchanged)
+
+canvas.width = displayWidth * scale;
+canvas.height = displayHeight * scale;
+canvas.style.width = displayWidth + 'px';
+canvas.style.height = displayHeight + 'px';
+
+// Scale the context to match high-res
+ctx.scale(scale, scale);
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   const bg = new Image();
@@ -210,6 +216,7 @@
 </body>
 
 </html>
+
 
 
 
