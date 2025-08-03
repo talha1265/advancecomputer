@@ -109,6 +109,16 @@
   const name = document.getElementById('studentName').value;
   const father = document.getElementById('fatherName').value;
   const course = document.getElementById('course').value;
+    const passcode = document.getElementById('passcode').value;
+
+  // ✅ Set your secure passcode here
+  const VALID_PASSCODE = 'ACE2025';
+
+  if (passcode !== VALID_PASSCODE) {
+    alert('Invalid passcode. Please contact the institute for assistance.');
+    return;
+  }
+
 
   const canvas = document.getElementById('certificateCanvas');
   const ctx = canvas.getContext('2d');
@@ -194,6 +204,7 @@
 </body>
 
 </html>
+
 
 
 
