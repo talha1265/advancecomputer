@@ -88,6 +88,10 @@
   </div>
 
   <script>
+            function toggleMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('nav-active');
+        }
     document.getElementById("whatsappForm").addEventListener("submit", function (e) {
       e.preventDefault();
       const name = document.getElementById("name").value;
