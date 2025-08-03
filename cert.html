@@ -90,75 +90,88 @@
             nav.classList.toggle('nav-active');
         }
 
-       document.getElementById('certificateForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+      document.getElementById('certificateForm').addEventListener('submit', function (e) {
+  e.preventDefault();
 
-    const name = document.getElementById('studentName').value;
-    const father = document.getElementById('fatherName').value;
-    const course = document.getElementById('course').value;
+  const name = document.getElementById('studentName').value;
+  const father = document.getElementById('fatherName').value;
+  const course = document.getElementById('course').value;
 
-    const canvas = document.getElementById('certificateCanvas');
-    const ctx = canvas.getContext('2d');
+  const canvas = document.getElementById('certificateCanvas');
+  const ctx = canvas.getContext('2d');
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Load all images
-    const bg = new Image();
-    const logo = new Image();
-    const signature = new Image();
-    const mesc = new Image();
+  const bg = new Image();
+  const logo = new Image();
+  const signature = new Image();
+  const mesc = new Image();
 
-    bg.src = 'bg.png'; // Your background
-    logo.src = 'logo.png';
-    signature.src = 'signature.png';
-    mesc.src = 'msme.png';
+  bg.src = 'bg.png';
+  logo.src = 'logo.png';
+  signature.src = 'signature.png';
+  mesc.src = 'msme.png';
 
-    // Wait for all to load
-    Promise.all([
-        new Promise(res => bg.onload = res),
-        new Promise(res => logo.onload = res),
-        new Promise(res => signature.onload = res),
-        new Promise(res => mesc.onload = res)
-    ]).then(() => {
-        // Draw background first
-        ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
+  Promise.all([
+    new Promise(res => bg.onload = res),
+    new Promise(res => logo.onload = res),
+    new Promise(res => signature.onload = res),
+    new Promise(res => mesc.onload = res)
+  ]).then(() => {
+    // Draw background
+    ctx.drawImage(bg, 0, 0, canvas.width, canvas.height);
 
-        // Draw institute logo
-        ctx.drawImage(logo, 40, 30, 80, 80);
+    // Logo (centered and larger)
+    const logoWidth = 108; // 80 * 1.35
+    const logoHeight = 108;
+    const logoX = (canvas.width - logoWidth) / 2;
+    ctx.drawImage(logo, logoX, 5, logoWidth, logoHeight);
 
-        // Institute Name
-        ctx.font = '28px Poppins';
-        ctx.fillStyle = 'rgb(193, 18, 31)';
-        ctx.textAlign = 'center';
-        ctx.fillText('Advance Computer Education Center', canvas.width / 2, 90);
+    // Institute Name (centered below logo)
+    ctx.font = '28px Poppins';
+    ctx.fillStyle = 'rgb(193, 18, 31)';
+    ctx.textAlign = 'center';
+    ctx.fillText('Advance Computer Education Center', canvas.width / 2, 140);
 
-        ctx.font = '24px Poppins';
-        ctx.fillStyle = '#000';
-        ctx.fillText('Certificate of Completion', canvas.width / 2, 140);
+    // Certificate Title
+    ctx.font = '24px Poppins';
+    ctx.fillStyle = '#000';
+    ctx.fillText('Certificate of Completion', canvas.width / 2, 180);
 
-        ctx.font = '18px Poppins';
-        ctx.fillText(`This is to certify that`, canvas.width / 2, 200);
-        ctx.fillText(`${name}`, canvas.width / 2, 240);
-        ctx.fillText(`S/O ${father}`, canvas.width / 2, 280);
-        ctx.fillText(`has successfully completed the ${course} course.`, canvas.width / 2, 320);
+    // Body Text
+    ctx.font = '18px Poppins';
+    ctx.fillText(`This is to certify that`, canvas.width / 2, 230);
+    ctx.fillText(`${name}`, canvas.width / 2, 270);
+    ctx.fillText(`S/O ${father}`, canvas.width / 2, 310);
+    ctx.fillText(`has successfully completed the ${course} course.`, canvas.width / 2, 350);
 
-        ctx.font = '14px Poppins';
-        ctx.fillText('Issued Date: ' + new Date().toLocaleDateString(), 150, 380);
-        ctx.fillText('Authorized Signatory', canvas.width - 150, 460);
+    // Signature
+    const signatureX = canvas.width - 230;
+    const signatureY = 410;
+    ctx.drawImage(signature, signatureX, signatureY, 120, 60);
 
-        // Signature
-        ctx.drawImage(signature, canvas.width - 250, 400, 120, 60);
+    // Authorized Text
+    ctx.font = '14px Poppins';
+    ctx.fillText('Authorized Signatory', signatureX + 60, signatureY + 70);
 
-        // MESC logo bottom-left
-        ctx.drawImage(mesc, 40, canvas.height - 100, 100, 60);
+    // Issued Date (left-aligned, same Y as signature text)
+    ctx.textAlign = 'left';
+    ctx.fillText('Issued Date: ' + new Date().toLocaleDateString(), 50, signatureY + 70);
 
-        // Show canvas and download
-        canvas.style.display = 'block';
-        const downloadLink = document.getElementById('downloadLink');
-        downloadLink.href = canvas.toDataURL();
-        downloadLink.style.display = 'inline-block';
-        downloadLink.innerText = 'Download Certificate';
-    });
+    // MSME logo at bottom center, 40px above bottom
+    const mescWidth = 100;
+    const mescHeight = 60;
+    const mescX = (canvas.width - mescWidth) / 2;
+    const mescY = canvas.height - 40 - mescHeight;
+    ctx.drawImage(mesc, mescX, mescY, mescWidth, mescHeight);
+
+    // Show canvas and link
+    canvas.style.display = 'block';
+    const downloadLink = document.getElementById('downloadLink');
+    downloadLink.href = canvas.toDataURL();
+    downloadLink.style.display = 'inline-block';
+    downloadLink.innerText = 'Download Certificate';
+  });
 });
 
 
@@ -167,6 +180,7 @@
 </body>
 
 </html>
+
 
 
 
