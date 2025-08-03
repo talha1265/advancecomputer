@@ -61,9 +61,11 @@
 
 
                     <button type="submit">Generate Certificate</button>
+                    
                 </form>
                 <canvas id="certificateCanvas" width="800" height="600" style="display: none;"></canvas>
-                <a id="downloadLink" download="Certificate.png" style="display: none;">Download Certificate</a>
+                <a id="downloadLink" download="Certificate.png" style="display: none; margin-top:5px;">Download Certificate</a>
+                <button id="printButton" class="secondary-btn" style="display: none; margin-top:5px;">Print Certificate</button>
             </div>
         </section>
 
@@ -89,6 +91,18 @@
             const nav = document.querySelector('.nav-links');
             nav.classList.toggle('nav-active');
         }
+        // Show print button
+document.getElementById('printButton').style.display = 'inline-block';
+
+// Print handler
+document.getElementById('printButton').addEventListener('click', function () {
+  const dataUrl = document.getElementById('certificateCanvas').toDataURL();
+  const printWindow = window.open('', '_blank');
+  printWindow.document.write(`<img src="${dataUrl}" style="width:100%">`);
+  printWindow.document.close();
+  printWindow.focus();
+  printWindow.print();
+});
 
       document.getElementById('certificateForm').addEventListener('submit', function (e) {
   e.preventDefault();
@@ -181,6 +195,7 @@
 </body>
 
 </html>
+
 
 
 
