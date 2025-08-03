@@ -126,24 +126,24 @@
     const logoHeight = 108;
     const logoX = (canvas.width - logoWidth) / 2;
     
-    ctx.drawImage(logo, logoX, 80, logoWidth, logoHeight);
+    ctx.drawImage(logo, logoX, 110, logoWidth, logoHeight);
 
     // Institute Name (centered below logo)
     ctx.font = '28px Poppins';
     ctx.fillStyle = 'rgb(193, 18, 31)';
     ctx.textAlign = 'center';
-    ctx.fillText('Advance Computer Education Center', canvas.width / 2, 180);
+    ctx.fillText('Advance Computer Education Center', canvas.width / 2, 240);
 
     // Certificate Title
     ctx.font = '24px Poppins';
     ctx.fillStyle = '#000';
-    ctx.fillText('Certificate of Completion', canvas.width / 2, 220);
+    ctx.fillText('Certificate of Completion', canvas.width / 2, 280);
 
     // Body Text
     ctx.font = '18px Poppins';
-    ctx.fillText(`This is to certify that`, canvas.width / 2, 250);
-    ctx.fillText(`${name}`, canvas.width / 2, 300);
-    ctx.fillText(`S/O ${father}`, canvas.width / 2, 320);
+    ctx.fillText(`This is to certify that`, canvas.width / 2, 300);
+    ctx.fillText(`${name}`, canvas.width / 2, 320);
+    ctx.fillText(`S/O ${father}`, canvas.width / 2, 340);
     ctx.fillText(`has successfully completed the ${course} course.`, canvas.width / 2, 390);
 
     // Signature
@@ -157,13 +157,13 @@
 
     // Issued Date (left-aligned, same Y as signature text)
     ctx.textAlign = 'left';
-    ctx.fillText('Issued Date: ' + new Date().toLocaleDateString(), 50, signatureY + 120);
+    ctx.fillText('Issued Date: ' + new Date().toLocaleDateString(), 80, signatureY + 70);
 
     // MSME logo at bottom center, 40px above bottom
     const mescWidth = 100;
     const mescHeight = 60;
     const mescX = (canvas.width - mescWidth) / 2;
-    const mescY = canvas.height - 90 - mescHeight;
+    const mescY = canvas.height - 120 - mescHeight;
     ctx.drawImage(mesc, mescX, mescY, mescWidth, mescHeight);
 
     // Show canvas and link
@@ -181,6 +181,7 @@
 </body>
 
 </html>
+
 
 
 
