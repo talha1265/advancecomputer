@@ -726,7 +726,7 @@ form button:hover {
     color: #fff;
     text-align: center;
     padding: 10px 20px 20px;
-    border-radius: 0 0 40px 40px;
+    border-radius: 0 0 0px 0px;
 }
 
 .inh p {
@@ -799,6 +799,7 @@ form button:hover {
 
    
 }
+
 
 
 
