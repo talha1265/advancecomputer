@@ -1,1 +1,101 @@
 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Course | Advance Computer Education Center</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+    <!-- Navbar (already styled separately) -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="logo.png" alt="Advance Computer Education Center" class="logo-img" />
+      </div>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="web-development.html">Web Dev</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Stock Market</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Certificates</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="course-hero">
+      <h1>Advance Computer Education Center</h1>
+      <p>From zero to hero: build real-world projects, step-by-step.</p>
+      <a href="contact.html" class="btn enroll-btn">Enroll Now</a>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="course-details">
+      <div class="course-intro">
+        <img src="web-course.jpg" alt="Web Dev" />
+        <div>
+          <h2>Empowering Careers Through Practical & Certified Skill Development</h2>
+          <p>Advance Computer Education Center is a skill development center focused on practical knowledge, government-certified training, and real career growth. Learn directly from industry professionals and turn your passion into a career.</p>
+           <p>We offer hands-on training in a wide range of in-demand fields such as web development, digital marketing, graphic design, and more. Our programs are designed to bridge the gap between academic knowledge and real-world industry requirements, helping students become job-ready from day one.</p>
+          <p>Whether you're a student, job seeker, our personalized mentorship, live projects, and placement support ensure you gain both confidence and competence. Join us to take the next step in your professional journey with recognized certifications and real-world skills.</p>
+         
+          <ul>
+            <li>HTML5, CSS3, JavaScript, Bootstrap</li>
+            <li>React.js, Node.js, Express</li>
+            <li>MongoDB, Git & GitHub</li>
+            <li>REST APIs and Authentication</li>
+            <li>Live project building & Internship support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlight Section -->
+    <section class="highlight">
+      <h2>Live Projects + Certification</h2>
+      <p>Earn a government-recognized certificate with real-world exposure. Our students work on capstone projects for NGOs, startups, and more to gain industrial experience.</p>
+    </section>
+
+   
+
+    <!-- Call To Action -->
+    <section class="cta" id="enroll">
+      <h2>Join the Future of Tech</h2>
+      <p>Let your ideas shape the web. Gain real skills, not just a certificate.</p>
+      <a href="#contact" class="btn cta-btn">Talk to Our Counselor</a>
+    </section>
+
+    <!-- Footer (already styled separately) -->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Career</a>
+      </div>
+      <p>&copy; 2025 Advance Computer Education Center. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('nav-active');
+    }
+  </script>
+</body>
+
+</html>
