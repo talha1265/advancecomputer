@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Course | Advance Computer Education Center</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+   <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+  <img src="logo.png" alt="Advance Computer Education Center" class="logo-img" />
+</div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="web.html">Web Dev</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Stock Market</a></li>
+          </ul>
+        </li>
+        <li><a href="./cert.html">Certificates</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+        
+      </ul>
+    </nav>
+
+<!-- Hero Banner -->
+<section class="course-hero">
+  <h1>Tally PRIME - Accounting & Taxation</h1>
+  <p>Master modern accounting practices and taxation with the industry’s leading software in just 3 months.</p>
+  <a href="#enroll" class="btn enroll-btn">Enroll Now</a>
+</section>
+
+<!-- Course Overview -->
+<section class="course-details">
+  <div class="course-intro">
+    <img src="tally.png" alt="Tally Prime Course Image" />
+    <div>
+      <h2>What You'll Learn in Tally PRIME</h2>
+      <p>This 3-month certification course offers complete knowledge of accounting and taxation using Tally PRIME, ideal for aspiring accountants, business owners, and commerce students.</p>
+      <ul>
+        <li>
+          <strong>Fundamentals of Accounting:</strong><br>
+          Manual Accounting, Book Keeping, Inventory Management
+        </li>
+        <li>
+          <strong>Practical Tally PRIME Training:</strong><br>
+          Working with Inventory, Voucher Entries, Project Creation, GST Setup & Configuration
+        </li>
+        <li>
+          <strong>Taxation & E-Filing:</strong><br>
+          GST Returns, TDS, Income Tax Basics, Online Filing Procedures
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Highlight Section -->
+<section class="highlight">
+  <h2>Govt. Certificate + Job-Ready Skills</h2>
+  <p>Gain a government-approved certificate and practical exposure to real accounting environments using Tally PRIME — the software used by thousands of companies across India.</p>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="feature">
+    <h3>📊 Hands-On Practice</h3>
+    <p>Get real-world experience in Tally with daily exercises and case studies.</p>
+  </div>
+  <div class="feature">
+    <h3>💼 Commerce Focused</h3>
+    <p>Perfect for students aiming for careers in accounting, finance, or admin roles.</p>
+  </div>
+  <div class="feature">
+    <h3>📅 Short-Term, High Value</h3>
+    <p>Only 3 months long, yet packed with all essential job skills in accounting and GST.</p>
+  </div>
+</section>
+
+
+
+
+    <!-- Call To Action -->
+    <section class="cta" id="enroll">
+      <h2>Join the Future of Tech</h2>
+      <p>Let your ideas shape the web. Gain real skills, not just a certificate.</p>
+      <a href="#contact" class="btn cta-btn">Talk to Our Counselor</a>
+    </section>
+
+    <!-- Footer (already styled separately) -->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Career</a>
+      </div>
+      <p>&copy; 2025 Advance Computer Education Center. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('nav-active');
+    }
+  </script>
+</body>
+
+</html>
