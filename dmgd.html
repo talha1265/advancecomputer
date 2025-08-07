@@ -1,1 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Course | Advance Computer Education Center</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+   <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+  <img src="logo.png" alt="Advance Computer Education Center" class="logo-img" />
+</div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="web.html">Web Dev</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Stock Market</a></li>
+          </ul>
+        </li>
+        <li><a href="./cert.html">Certificates</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+        
+      </ul>
+    </nav>
+
+<!-- Hero Banner -->
+<section class="course-hero">
+  <h1>DMGD - Diploma in Multimedia & Graphic Designing</h1>
+  <p>The best program for smart multimedia professionals with 100% placement-focused training.</p>
+  <a href="#enroll" class="btn enroll-btn">Enroll Now</a>
+</section>
+
+<!-- Course Overview -->
+<section class="course-details">
+  <div class="course-intro">
+    <img src="./dmgd.png" alt="DMGD Course Image" />
+    <div>
+      <h2>Why Choose DMGD?</h2>
+      <p>This 16-month Diploma is ideal for creative minds aiming to master the world of multimedia and graphic design. With hands-on training in industry tools and real-world projects, it prepares students for a career in design, animation, and digital media.</p>
+      <ul>
+        <li>
+          <strong>Design & Development Core:</strong><br>
+          Fundamentals & Windows, Microsoft Office (W, E, P, A), Graphics Designing (DTP), Internet Concepts, Web Designing
+        </li>
+        <li>
+          <strong>Creative & Technical Modules:</strong><br>
+          Interview Training, Cyber Security, Computer Hardware, Printing Method, Networking Information*
+        </li>
+        <li>
+          <strong>Multimedia & Productivity:</strong><br>
+          Animation, English Typing, Hindi Typing
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Highlight Section -->
+<section class="highlight">
+  <h2>Live Projects + Government Certification</h2>
+  <p>Complete this course and earn a government-recognized certificate. Participate in real multimedia projects that build your design portfolio and technical skills.</p>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="feature">
+    <h3>🎨 Creative Learning</h3>
+    <p>Focus on industry-standard tools and techniques in graphic and multimedia design.</p>
+  </div>
+  <div class="feature">
+    <h3>💼 Career Preparation</h3>
+    <p>Build your portfolio, get interview ready, and access internship support and job placement.</p>
+  </div>
+  <div class="feature">
+    <h3>🖥️ Hands-On Projects</h3>
+    <p>Engage in design, animation, and digital work to gain practical experience.</p>
+  </div>
+</section>
+
+
+
+    <!-- Call To Action -->
+    <section class="cta" id="enroll">
+      <h2>Join the Future of Tech</h2>
+      <p>Let your ideas shape the web. Gain real skills, not just a certificate.</p>
+      <a href="#contact" class="btn cta-btn">Talk to Our Counselor</a>
+    </section>
+
+    <!-- Footer (already styled separately) -->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Career</a>
+      </div>
+      <p>&copy; 2025 Advance Computer Education Center. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('nav-active');
+    }
+  </script>
+</body>
+
+</html>
 
