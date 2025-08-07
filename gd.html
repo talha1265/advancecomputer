@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Course | Advance Computer Education Center</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+   <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+  <img src="logo.png" alt="Advance Computer Education Center" class="logo-img" />
+</div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="web.html">Web Dev</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Stock Market</a></li>
+          </ul>
+        </li>
+        <li><a href="./cert.html">Certificates</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+        
+      </ul>
+    </nav>
+
+<!-- Hero Banner -->
+<section class="course-hero">
+  <h1>D.T.P. (Graphic Designing) - Professional Print & Digital Design</h1>
+  <p>Master desktop publishing and graphic design with industry-standard tools in just 3 months.</p>
+  <a href="#enroll" class="btn enroll-btn">Enroll Now</a>
+</section>
+
+<!-- Course Overview -->
+<section class="course-details">
+  <div class="course-intro">
+    <img src="dtp.png" alt="DTP Graphic Designing Course Image" />
+    <div>
+      <h2>What You'll Learn in D.T.P. (Graphic Designing)</h2>
+      <p>This 3-month certification course teaches you to create stunning print and digital designs, perfect for advertising, publishing, and branding.</p>
+      <ul>
+        <li>
+          <strong>Creative Software Skills:</strong><br>
+          Corel Draw, Adobe Photoshop, Image Ready
+        </li>
+        <li>
+          <strong>Designing for Print & Digital:</strong><br>
+          Business Cards, Brochures, Posters, Social Media Graphics
+        </li>
+        <li>
+          <strong>Printing Knowledge:</strong><br>
+          Understanding Printing Methods, Color Management, Layout Preparation
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Highlight Section -->
+<section class="highlight">
+  <h2>Create Designs That Stand Out</h2>
+  <p>From concept to final print, you’ll learn to produce high-quality, professional designs ready for real-world projects.</p>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="feature">
+    <h3>🎨 Hands-On Creativity</h3>
+    <p>Practice real projects like flyers, posters, and product packaging.</p>
+  </div>
+  <div class="feature">
+    <h3>🖥 Industry Software</h3>
+    <p>Gain expertise in the top tools used by professional designers worldwide.</p>
+  </div>
+  <div class="feature">
+    <h3>📚 Practical Printing Skills</h3>
+    <p>Understand print production to avoid costly design and color mistakes.</p>
+  </div>
+</section>
+
+
+
+
+    <!-- Call To Action -->
+    <section class="cta" id="enroll">
+      <h2>Join the Future of Tech</h2>
+      <p>Let your ideas shape the web. Gain real skills, not just a certificate.</p>
+      <a href="#contact" class="btn cta-btn">Talk to Our Counselor</a>
+    </section>
+
+    <!-- Footer (already styled separately) -->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Career</a>
+      </div>
+      <p>&copy; 2025 Advance Computer Education Center. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('nav-active');
+    }
+  </script>
+</body>
+
+</html>
