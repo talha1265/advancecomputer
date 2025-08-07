@@ -1,1 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Web Development Course | Advance Computer Education Center</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="container">
+   <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+  <img src="logo.png" alt="Advance Computer Education Center" class="logo-img" />
+</div>
+
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li class="dropdown">
+          <a href="#">Courses</a>
+          <ul class="dropdown-content">
+            <li><a href="web.html">Web Dev</a></li>
+            <li><a href="#">Digital Marketing</a></li>
+            <li><a href="#">Stock Market</a></li>
+          </ul>
+        </li>
+        <li><a href="./cert.html">Certificates</a></li>
+        <li><a href="./contact.html">Contact Us</a></li>
+        
+      </ul>
+    </nav>
+
+    <!-- Hero Banner -->
+    <section class="course-hero">
+      <h1>Master Web Development</h1>
+      <p>From zero to full-stack hero: build real-world projects, step-by-step.</p>
+      <a href="#enroll" class="btn enroll-btn">Enroll Now</a>
+    </section>
+
+    <!-- Course Overview -->
+    <section class="course-details">
+      <div class="course-intro">
+        <img src="web-course.jpg" alt="Web Dev" />
+        <div>
+          <h2>Why Choose This Course?</h2>
+          <p>Our Web Development program is designed to turn absolute beginners into professionals. You will learn both front-end and back-end development with hands-on projects, live mentorship, and career assistance.</p>
+          <ul>
+            <li>HTML5, CSS3, JavaScript, Bootstrap</li>
+            <li>React.js, Node.js, Express</li>
+            <li>MongoDB, Git & GitHub</li>
+            <li>REST APIs and Authentication</li>
+            <li>Live project building & Internship support</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlight Section -->
+    <section class="highlight">
+      <h2>Live Projects + Certification</h2>
+      <p>Earn a government-recognized certificate with real-world exposure. Our students work on capstone projects for NGOs, startups, and more to gain industrial experience.</p>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+      <div class="feature">
+        <h3>🏢 Learn At Your Pace</h3>
+        <p>Flexible batch timings with recorded sessions for revision and backup.</p>
+      </div>
+      <div class="feature">
+        <h3>💼 Placement Focused</h3>
+        <p>Resume building, interview training, and internship opportunities provided.</p>
+      </div>
+      <div class="feature">
+        <h3>🧪 No Prior Coding Needed</h3>
+        <p>This course starts from the fundamentals and gradually builds to advanced topics.</p>
+      </div>
+    </section>
+
+    <!-- Call To Action -->
+    <section class="cta" id="enroll">
+      <h2>Join the Future of Tech</h2>
+      <p>Let your ideas shape the web. Gain real skills, not just a certificate.</p>
+      <a href="#contact" class="btn cta-btn">Talk to Our Counselor</a>
+    </section>
+
+    <!-- Footer (already styled separately) -->
+    <footer>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#courses">Courses</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Career</a>
+      </div>
+      <p>&copy; 2025 Advance Computer Education Center. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.querySelector('.nav-links');
+      nav.classList.toggle('nav-active');
+    }
+  </script>
+</body>
+
+</html>
